@@ -8,7 +8,7 @@ import images from '~/assets/images';
 
 import { Wrapper as PopupWrapper } from '~/components/Popper';
 import AccountItem from '~/components/SearchAccountItem';
-
+import Button from '~/components/Button';
 const cx = className.bind(styles);
 
 function Header() {
@@ -16,7 +16,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResults([1, 2.3]);
+            setSearchResults([]);
         }, 0);
     }, []);
     return (
@@ -37,7 +37,6 @@ function Header() {
                                 <AccountItem />
                                 <AccountItem />
                                 <AccountItem />
-
                                 <AccountItem />
                                 <AccountItem />
                                 <AccountItem />
@@ -61,7 +60,14 @@ function Header() {
                     </div>
                 </Tippy>
                 <Tippy render={(attrs) => <div className={cx('menu-actions')} {...attrs}></div>}>
-                    <div className={cx('actions')}></div>
+                    <div className={cx('actions')}>
+                        <Button text disabled onClick={() => {}}>
+                            Upload
+                        </Button>
+                        <Button rouded onClick={() => {}}>
+                            Log in
+                        </Button>
+                    </div>
                 </Tippy>
             </div>
         </header>
